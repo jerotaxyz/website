@@ -8,7 +8,7 @@ export function JoinWaitList() {
             method="POST"
         >
             {/* parent wrapper holds border, bg, and focus ring */}
-            <div className="flex flex-col sm:flex-row items-center w-full rounded-full border-2 border-border bg-background focus-within:ring-1 focus-within:ring-primary/50 focus-within:border-primary/50">
+            <div className="flex flex-row items-center w-full rounded-full border-2 border-border bg-background focus-within:ring-1 focus-within:ring-primary/50 focus-within:border-primary/50">
                 <input
                     type="email"
                     name="email"
@@ -19,7 +19,7 @@ export function JoinWaitList() {
                 <Button
                     size="lg"
                     type="submit"
-                    className="btn-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-medium transition-all duration-200 cursor-pointer w-full sm:w-auto sm:mr-[1.5px]"
+                    className="btn-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-medium transition-all duration-200 cursor-pointer sm:w-auto sm:mr-[1.5px] mr-[2px]"
                 >
                     Join waitlist
                 </Button>
