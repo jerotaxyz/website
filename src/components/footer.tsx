@@ -1,4 +1,4 @@
-import { Twitter, Mail } from 'lucide-react'
+import { Twitter, Mail, Github } from 'lucide-react'
 import Logo from '../assets/logo.png'
 import { JoinWaitList } from './ui/join-waitlist'
 
@@ -46,7 +46,7 @@ export function Footer() {
                                         className="flex items-center gap-3 text-gray-400 hover:text-[#2EAF4E] transition-colors cursor-pointer"
                                     >
                                         <Twitter className="text-primary h-5 w-5" />
-                                        jerotaxyz
+                                        @jerotaxyz
                                     </a>
                                     <a
                                         href="mailto:jerotaxyz@gmail.com"
@@ -54,6 +54,13 @@ export function Footer() {
                                     >
                                         <Mail className="text-primary h-5 w-5" />
                                         jerotaxyz@gmail.com
+                                    </a>
+                                    <a
+                                        href="https://github.com/jerotaxyz"
+                                        className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors cursor-pointer"
+                                    >
+                                        <Github className="text-primary h-5 w-5" />
+                                        @jerotaxyz
                                     </a>
                                 </div>
                             </div>
