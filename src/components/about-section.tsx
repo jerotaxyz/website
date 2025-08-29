@@ -51,7 +51,7 @@ export function AboutSection() {
                                 <CardContent className="p-0 relative">
                                     {/* Image Section */}
                                     <div
-                                        className="w-full h-48 sm:h-56 lg:h-64 bg-contain bg-center relative"
+                                        className="w-full h-48 sm:h-56 lg:h-64 bg-cover bg-center relative"
                                         style={{ backgroundImage: `url(${about.img})` }}
                                     >
                                         {/* Gradient overlay */}

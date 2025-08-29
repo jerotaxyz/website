@@ -16,6 +16,11 @@ export function JoinWaitList() {
                     className="flex-1 px-6 py-3 bg-transparent rounded-full focus:outline-none text-foreground placeholder:text-muted-foreground w-full"
                     required
                 />
+                <input type="hidden" name="_next" value={`${window.location.origin}/thank-you`} />
+                {/* <input type="hidden" name="_subject" value="New waitlist submission" /> */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_autoresponse" value="Thank you for joining Jerota's waitlist 🎉" />
                 <Button
                     size="lg"
                     type="submit"

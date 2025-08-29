@@ -1,23 +1,16 @@
 import './App.css'
-import { AboutSection } from './components/about-section'
-import { BuildingSection } from './components/building-section'
-import { FAQSection } from './components/faq-section'
-import { Footer } from './components/footer'
-import { Header } from './components/header'
-import { HeroSection } from './components/hero-section'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HomePage } from './pages/home-page'
+import { ThankYouPage } from './pages/thank-you-page'
 
 function App() {
     return (
-        <div className="min-h-screen bg-background">
-            <Header />
-            <main>
-                <HeroSection />
-                <AboutSection />
-                <BuildingSection />
-                <FAQSection />
-            </main>
-            <Footer />
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/thank-you" element={<ThankYouPage />} />
+            </Routes>
+        </Router>
     )
 }
 
