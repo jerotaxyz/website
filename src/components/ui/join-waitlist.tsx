@@ -20,7 +20,7 @@ export function JoinWaitList() {
                 {/* <input type="hidden" name="_subject" value="New waitlist submission" /> */}
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_autoresponse" value="Thank you for joining Jerota's waitlist 🎉" />
+                {/* <input type="hidden" name="_autoresponse" value="Thank you for joining Jerota's waitlist 🎉" /> */}
                 <Button
                     size="lg"
                     type="submit"
