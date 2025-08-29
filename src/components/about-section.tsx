@@ -32,28 +32,55 @@ export function AboutSection() {
         },
     ]
     return (
-        <section id="about" className="py-16 px-4 bg-card/30">
-            <div className="container mx-auto">
+        <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-card/30">
+            <div className="container mx-auto max-w-6xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">What is Jerota about?</h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                        What is <span className="text-brand">Jerota</span> about?
+                    </h2>
+                    <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                         Jerota connects creators and fans. Every stream and watch you make earns you
                         real crypto rewards.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 mb-16">
-                    {aboutArr.map((about: any) => (
-                        <div className="space-y-8">
-                            <Card className="border-border rounded-[24px]">
-                                <CardContent
-                                    className="p-0 w-full bg-cover bg-center h-128 rounded-[24px] relative"
-                                    style={{ backgroundImage: `url(${about.img})` }}
-                                >
-                                    <div className="flex flex-col gap-2 items-start bg-[#000] border-t-4 rounded-[24px] border-base-300 p-4 bottom-0 absolute">
-                                        <span className='border-1 border-primary rounded-full px-4 py-1'>{ about.tag }</span>
-                                        <h3 className="text-xl font-bold mb-2">{about.title}</h3>
-                                        <p className="text-muted-foreground">{about.desc}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    {aboutArr.map((about: any, index: number) => (
+                        <div key={index} className="group">
+                            <Card className="card-about overflow-hidden rounded-3xl">
+                                <CardContent className="p-0 relative">
+                                    {/* Image Section */}
+                                    <div
+                                        className="w-full h-48 sm:h-56 lg:h-64 bg-contain bg-center relative"
+                                        style={{ backgroundImage: `url(${about.img})` }}
+                                    >
+                                        {/* Gradient overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                    </div>
+
+                                    {/* Curved Content Section */}
+                                    <div className="relative bg-card">
+                                        {/* Curved top border using CSS */}
+                                        <div
+                                            className="absolute -top-5 left-0 right-0 h-6 bg-card"
+                                            style={{
+                                                borderRadius: '50px 50px 0 0',
+                                                clipPath: 'ellipse(100% 100% at 50% 0%)',
+                                            }}
+                                        ></div>
+
+                                        {/* Content - Centered on mobile, left-aligned on larger screens */}
+                                        <div className="px-4 sm:px-6 pt-8 pb-6 text-center md:text-left">
+                                            <span className="inline-block border-primary border-1 text-brand rounded-full px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium mb-3 sm:mb-4 backdrop-blur-sm">
+                                                {about.tag}
+                                            </span>
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-foreground">
+                                                {about.title}
+                                            </h3>
+                                            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-none md:max-w-sm lg:max-w-none">
+                                                {about.desc}
+                                            </p>
+                                        </div>
                                     </div>
                                 </CardContent>
                             </Card>

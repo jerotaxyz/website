@@ -10,7 +10,7 @@ function App() {
     return (
         <div className="min-h-screen bg-background">
             <Header />
-            <main className='px-18'>
+            <main>
                 <HeroSection />
                 <AboutSection />
                 <BuildingSection />

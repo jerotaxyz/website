@@ -3,88 +3,79 @@ import BuildingImage2 from '../assets/building-2-image.png'
 import BuildingImage3 from '../assets/building-3-image.png'
 
 export function BuildingSection() {
+    const features = [
+        {
+            icon: '💰',
+            title: 'Earn Crypto rewards',
+            description:
+                'Discover new music, like & follow artists and earn crypto rewards, including our native token, $JAT. Easily by engaging with your favorite music and videos. The more you engage, the more you earn. Allowing you to monetize your music consumption.',
+            image: BuildingImage1,
+            imageAlt: 'Crypto rewards dashboard',
+        },
+        {
+            icon: '🚀',
+            title: 'Boost Streams & Promote',
+            description:
+                'Use Jerota Boost to get more eyes and ears on your music and content. Promote your streams to reach a wider audience. Connect with fans and build your following. Jerota provides tools to help you grow your audience and increase your reach.',
+            image: BuildingImage2,
+            imageAlt: 'Stream promotion dashboard',
+            reverse: true,
+        },
+        {
+            icon: '🎵',
+            title: 'Become a Creator & User',
+            description:
+                'Effortlessly switch to a creator account and monetize your favorite music by becoming content creators, and share your music with the world. Upload your music, build your fanbase, and earn rewards. Creating a stronger connection between listeners and creators.',
+            image: BuildingImage3,
+            imageAlt: 'Creator profile dashboard',
+        },
+    ]
+
     return (
-        <section id="features" className="py-16 px-4">
-            <div className="container mx-auto">
+        <section id="features" className="py-16 px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto max-w-6xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">What we are building?</h2>
-                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                        What we are <span className="text-brand">building</span>?
+                    </h2>
+                    <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                         Jerota is bringing Web3-based opportunities that will serve both artists and
                         listeners. The platform is creating a space where the music community can
                         thrive.
                     </p>
                 </div>
 
-                <div className="space-y-16">
-                    {/* Earn Crypto Rewards */}
-                    <div className="grid lg:grid-cols-2 items-center border-2 rounded-[32px] px-4 py-8">
-                        <div className="flex justify-center">
-                            <img
-                                src={BuildingImage1}
-                                alt="Crypto rewards dashboard"
-                                className="w-64 h-auto rounded-3xl shadow-2xl"
-                            />
-                        </div>
-                        <div>
-                            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                                <span className="text-primary">💰</span>
-                                Earn Crypto rewards
-                            </h3>
-                            <p className="text-muted-foreground mb-6 leading-relaxed">
-                                Discover new music, like & follow artists and earn crypto rewards,
-                                including our native token, $JAT. Easily by engaging with your
-                                favorite music and videos. The more you engage, the more you earn.
-                                Allowing you to monetize your music consumption.
-                            </p>
-                        </div>
-                    </div>
+                <div className="space-y-12 lg:space-y-20">
+                    {features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center border border-border rounded-3xl p-6 sm:p-8 lg:p-12 hover:border-primary/30 transition-all duration-300 ${
+                                feature.reverse ? 'lg:grid-flow-col-dense' : ''
+                            }`}
+                        >
+                            {/* Image */}
+                            <div
+                                className={`flex justify-center ${feature.reverse ? 'lg:col-start-2' : ''}`}
+                            >
+                                <img
+                                    src={feature.image}
+                                    alt={feature.imageAlt}
+                                    className="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto rounded-2xl shadow-2xl"
+                                />
+                            </div>
 
-                    {/* Boost Streams & Promote */}
-                    <div className="grid lg:grid-cols-2 items-center border-2 rounded-[32px] px-4 py-8">
-                        <div className="">
-                            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                                <span className="text-primary">🚀</span>
-                                Boost Streams & Promote
-                            </h3>
-                            <p className="text-muted-foreground mb-6 leading-relaxed">
-                                Use Jerota Boost to get more eyes and ears on your music and
-                                content. Promote your streams to reach a wider audience. Connect
-                                with fans and build your following. Jerota provides tools to help
-                                you grow your audience and increase your reach.
-                            </p>
+                            {/* Content */}
+                            <div className={`space-y-4 ${feature.reverse ? 'lg:col-start-1' : ''}`}>
+                                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold flex items-center gap-3">
+                                    <span className="text-2xl">{feature.icon}</span>
+                                    {feature.title}
+                                </h3>
+                                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+                                    {feature.description}
+                                </p>
+                            </div>
                         </div>
-                        <div className="order-2 lg:order-1 flex justify-center">
-                            <img
-                                src={BuildingImage2}
-                                alt="Stream promotion dashboard"
-                                className="w-64 h-auto rounded-3xl shadow-2xl"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Become a Creator & User */}
-                    <div className="grid lg:grid-cols-2 items-center border-2 rounded-[32px] px-4 py-8">
-                        <div className="flex justify-center">
-                            <img
-                                src={BuildingImage3}
-                                alt="Creator profile dashboard"
-                                className="w-64 h-auto rounded-3xl shadow-2xl"
-                            />
-                        </div>
-                        <div>
-                            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                                <span className="text-primary">🎵</span>
-                                Become a Creator & User
-                            </h3>
-                            <p className="text-muted-foreground mb-6 leading-relaxed">
-                                Effortlessly switch to a creator account and monetize your favorite
-                                music by becoming content creators, and share your music with the
-                                world. Upload your music, build your fanbase, and earn rewards.
-                                Creating a stronger connection between listeners and creators. View
-                                and like content they love and make a living.
-                            </p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

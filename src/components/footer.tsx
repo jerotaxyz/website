@@ -1,64 +1,60 @@
+import { Twitter, Mail } from 'lucide-react'
+import Logo from '../assets/logo.png'
+import { JoinWaitList } from './ui/join-waitlist'
+import { SocialIcon } from 'react-social-icons'
+
 export function Footer() {
     return (
-        <footer className="bg-background border-t border-border py-12 px-4">
-            <div className="container mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                            <span className="text-primary-foreground font-bold text-sm">J</span>
-                        </div>
-                        <div>
-                            <span className="text-xl font-bold text-foreground">Jerota</span>
-                            <p className="text-sm text-muted-foreground">Play Stream & Earn</p>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-                        <div>
-                            <h4 className="font-semibold mb-3">Our Apps</h4>
-                            <div className="space-y-2">
-                                <a
-                                    href="#"
-                                    className="block text-muted-foreground hover:text-primary transition-colors"
-                                >
-                                    iOS App
-                                </a>
-                                <a
-                                    href="#"
-                                    className="block text-muted-foreground hover:text-primary transition-colors"
-                                >
-                                    Android App
-                                </a>
+        <footer className="py-16 px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto max-w-6xl">
+                {/* Top Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+                    {/* Brand and Email Signup */}
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
+                        <div className="lg:max-w-md">
+                            <div className="mb-2">
+                                <img src={Logo} alt="Jerota Logo" className="h-8 w-auto" />
                             </div>
+                            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                                Play Stream & <span className="text-[#2EAF4E]">Earn</span>
+                            </h3>
+                            <JoinWaitList />
                         </div>
 
+                        {/* Services and Contact */}
                         <div>
-                            <h4 className="font-semibold mb-3">Contact Us</h4>
-                            <div className="space-y-2">
-                                <a
-                                    href="mailto:support@jerota.com"
-                                    className="block text-muted-foreground hover:text-primary transition-colors"
-                                >
-                                    support@jerota.com
-                                </a>
-                                <div className="flex gap-4 mt-4">
+                            {/* Services */}
+                            <div className="mb-4">
+                                <h4 className="font-semibold mb-4 text-white text-lg">Services</h4>
+                                <div className="space-y-4">
                                     <a
-                                        href="#"
-                                        className="text-muted-foreground hover:text-primary transition-colors"
+                                        href="#about"
+                                        className="block text-gray-400 hover:text-primary transition-colors cursor-pointer"
                                     >
-                                        Twitter
+                                        About Jerota
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Contact */}
+                            <div>
+                                <h4 className="font-semibold mb-4 text-[#F5F5F5] text-lg">
+                                    Contact us
+                                </h4>
+                                <div className="space-y-4">
+                                    <a
+                                        href="https://x.com/jerotaxyz"
+                                        className="flex items-center gap-3 text-gray-400 hover:text-[#2EAF4E] transition-colors cursor-pointer"
+                                    >
+                                        <Twitter className="text-primary h-5 w-5" />
+                                        jerotaxyz
                                     </a>
                                     <a
-                                        href="#"
-                                        className="text-muted-foreground hover:text-primary transition-colors"
+                                        href="mailto:jerotaxyz@gmail.com"
+                                        className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors cursor-pointer"
                                     >
-                                        Discord
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="text-muted-foreground hover:text-primary transition-colors"
-                                    >
-                                        Telegram
+                                        <Mail className="text-primary h-5 w-5" />
+                                        jerotaxyz@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -66,29 +62,26 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-border mt-8 pt-8 text-center">
-                    <p className="text-muted-foreground text-sm">
-                        © {new Date().getFullYear()} Jerota. All Rights Reserved.
-                    </p>
-                    <div className="flex justify-center gap-6 mt-4">
-                        <a
-                            href="#"
-                            className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                        >
-                            Terms of use
-                        </a>
-                        <a
-                            href="#"
-                            className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                        >
-                            Privacy Policy
-                        </a>
-                        <a
-                            href="#"
-                            className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                        >
-                            Cookies
-                        </a>
+                {/* Bottom Section */}
+                <div className="border-t border-gray-800 pt-8">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <p className="text-gray-400 text-sm text-center sm:text-left">
+                            © Jerota All Rights Reserved
+                        </p>
+                        <div className="flex flex-wrap justify-center sm:justify-end gap-6">
+                            <a
+                                href="#"
+                                className="text-gray-400 hover:text-primary transition-colors text-sm cursor-pointer"
+                            >
+                                Terms and conditions
+                            </a>
+                            <a
+                                href="#"
+                                className="text-gray-400 hover:text-primary transition-colors text-sm cursor-pointer"
+                            >
+                                Privacy Policy
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
