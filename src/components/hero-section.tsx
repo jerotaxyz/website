@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import HeroSectionImage from '../assets/hero-section-image.png'
 import { JoinWaitList } from './ui/join-waitlist'
 

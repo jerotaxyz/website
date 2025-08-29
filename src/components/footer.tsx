@@ -1,7 +1,6 @@
 import { Twitter, Mail } from 'lucide-react'
 import Logo from '../assets/logo.png'
 import { JoinWaitList } from './ui/join-waitlist'
-import { SocialIcon } from 'react-social-icons'
 
 export function Footer() {
     return (
